@@ -24,18 +24,19 @@ export const Email = ({ email }) => {
                         Date: <i>{new Date(email.date).toString()}</i>
                     </strong>
                 </div>
+                <div
+                    className="mt-2"
+                    dangerouslySetInnerHTML={{ __html: email.body }}
+                ></div>
+
                 {email.attachments.map((attachment) => (
                     <div key={attachment.checksum} className="mt-4">
-                        <strong>Attachment: </strong>
+                        <strong>Email attachment: </strong>
                         <a href={attachment.downloadUrl}>
                             {attachment.filename}
                         </a>
                     </div>
                 ))}
-                <div
-                    className="mt-4"
-                    dangerouslySetInnerHTML={{ __html: email.body }}
-                ></div>
             </div>
         </div>
     );

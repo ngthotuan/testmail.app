@@ -7,7 +7,7 @@ export const EmailListItem = (props) => {
             onClick={props.onClick}
             className="list-group-item list-group-item-action pointer"
         >
-            <h5 className="mb-1">{props.subject}</h5>
+            <h5 className="mb-1 overflow-hidden">{props.subject}</h5>
             <small className="text-muted">From: {props.from}</small>
             <br />
             <small className="text-muted">To: {props.to}</small>
